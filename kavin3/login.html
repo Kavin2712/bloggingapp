@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+    body {
+        background-image: url('data:image/jpeg;base64,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');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+   }
+        body {
+  background-color: #f3f3f3;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 40px 55px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #220b0b;
+  border-radius: 3px;
+}
+
+input[type="button"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+    </style>
+    <script>
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the username and password are valid
+            if(username ==="kavin" && password ==="kavin27") {
+                // If valid, redirect to the second page
+                window.location = "3.html";
+            } else {
+                // If invalid, show an error message
+                alert("Invalid username or password!");
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <center>
+    <h1> Login postInIt</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <input type="button" value="Login" onclick="validate()"><br><br><br>
+        
+    </form>
+    <center>
+       
+
+</body>
+</html>

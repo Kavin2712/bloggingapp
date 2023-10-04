@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microblogging App</title>
+    <style>
+ body {
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        /* Basic reset for margin and padding */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4ba0b9;
+    font-size: 40px;
+    font-family: "Audiowide", sans-serif;
+    color: rgb(63, 150, 12);
+    text-align: center;
+    padding: 1rem;
+
+}
+header {
+    background-color: #1997a0;
+    font-size: 40px;
+    font-family: "Audiowide", sans-serif;
+    color: rgb(5, 8, 4);
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    margin-right: 10px;
+}
+
+
+#post-form {
+    background-color: rgb(153, 50, 50);
+    border-bottom: 1px solid #12a2bb;
+    padding: 1rem;
+    width: 500px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#posts {
+    background-color: rgb(175, 142, 142);
+    padding: 1rem;
+}
+
+.post {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+.like-button, .dislike-button {
+    padding: 0.3rem 0.6rem;
+    background-color: #080707;
+    color: #a2b30f;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.likes-count, .dislikes-count {
+    margin-top: 0.5rem;
+    color: #3ad314;
+}
+
+    </style>
+</head>
+</head>
+<body>
+    <header>
+        <img src="kd.jpg" alt="App Logo" width="100" height="100">
+        <i>PostInIt</i>
+    </header>
+    <button id="optionButton">Options</button>
+    <ul id="optionList" style="display: none;">
+        <li><a href="#" id="logout">Logout</a></li>
+        <li><a href="#" id="message">Message</a></li>
+    </ul>
+    <button id="profileButton">Profile</button>
+
+    <section id="post-form">
+        <h2>Create a New Post</h2>
+        <form id="new-post-form">
+            <textarea id="post-content" placeholder="Write your post here"></textarea>
+            <button type="submit">Post Text</button>
+        </form>
+        <form id="new-image-form">
+            <input type="text" id="image-heading" placeholder="Enter Image Heading">
+            <input type="file" id="image-file" accept="image/*">
+            <button type="submit">Post Image</button>
+        </form>
+    </section>
+
+    <section id="text-posts">
+        <!-- Existing text posts will be added here dynamically -->
+    </section>
+
+    <section id="image-posts">
+        <!-- Existing image posts will be added here dynamically -->
+    </section>
+    <center>
+
+    <section id="profile-section" style="display: none;">
+        <!-- Your profile section content -->
+        <h2>Your Profile</h2>
+        <img src="ks.png" alt=>
+        <p>Name: kavin</p>
+        <p>Age: 19</p>
+        <p>Account Created:27/12/2022</p>
+        <p>Bio:Get ur Skill Set ur path Go to Win ❤️💪</p>
+    </section>
+</center>
+    <script>
+        const optionButton = document.getElementById('optionButton');
+const optionList = document.getElementById('optionList');
+
+optionButton.addEventListener('click', () => {
+    optionList.style.display = (optionList.style.display === 'none') ? 'block' : 'none';
+});
+
+const logout= document.getElementById('logout');
+logout.addEventListener('click', () => {
+    console.log('User logged out.');
+    window.location = "login.html";
+    optionList.style.display = 'none'; 
+});
+const message = document.getElementById('message');
+message.addEventListener('click', () => {
+    console.log('Message clicked.');
+    window.location ="message.html"
+    optionList.style.display = 'none';
+});
+const profileButton = document.getElementById('profileButton');
+        const profileSection = document.getElementById('profile-section');
+
+        profileButton.addEventListener('click', () => {
+            if (profileSection.style.display === 'none') {
+                profileSection.style.display = 'block';
+            } else {
+                profileSection.style.display = 'none';
+            }
+        });
+        const textForm = document.getElementById('new-post-form');
+        const imageForm = document.getElementById('new-image-form');
+        const textPostsSection = document.getElementById('text-posts');
+        const imagePostsSection = document.getElementById('image-posts');
+        
+        textForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const postContent = document.getElementById('post-content').value;
+            
+            if (postContent.trim() !== '') {
+                const postElement = createPostElement(postContent);
+                textPostsSection.appendChild(postElement);
+                clearForm('post-content');
+            }
+        });
+        
+        imageForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const imageHeadingInput = document.getElementById('image-heading');
+    const imageFileInput = document.getElementById('image-file');
+    const imageFile = imageFileInput.files[0];
+    
+    if (imageFile) {
+        const imageUrl = URL.createObjectURL(imageFile);
+        const imageHeading = imageHeadingInput.value || "Default Heading";
+        const postElement = createImagePostElement(imageUrl, imageHeading);
+        imagePostsSection.appendChild(postElement);
+        imageHeadingInput.value = '';
+        imageFileInput.value = null;
+    }
+});
+
+
+        
+        function createPostElement(content) {
+            const postElement = document.createElement('div');
+            postElement.classList.add('post', 'text-post');
+            postElement.innerHTML = `
+                <p>${content}</p>
+
+                <button class="like-button">Like</button>
+                <button class="dislike-button">Dislike</button>
+                <button class="comment-button">Comment</button>
+                <button class="delete-button">Delete</button>
+                <p class="likes-count">Likes: 0</p>
+                <p class="dislikes-count">Dislikes: 0</p>
+                <div class="comments-section"></div>
+                <p>Posted: ${new Date().toLocaleString()}</p>
+
+                
+            `;
+            
+            addCommonEventListeners(postElement);
+            
+            return postElement;
+        }
+        
+        function createImagePostElement(imageUrl, imageHeading) {
+    const postElement = document.createElement('div');
+    postElement.classList.add('post', 'image-post');
+    postElement.innerHTML = `
+        <h3>${imageHeading}</h3>
+        <img src="${imageUrl}" alt="Post Image" width="300">
+        <button class="like-button">Like</button>
+        <button class="dislike-button">Dislike</button>
+        <button class="comment-button">Comment</button>
+        <button class="delete-button">Delete</button>
+        <p class="likes-count">Likes: 0</p>
+        <p class="dislikes-count">Dislikes: 0</p>
+        <p>Posted: ${new Date().toLocaleString()}</p>
+
+        <div class="comments-section"></div>
+    `;
+    
+    addCommonEventListeners(postElement);
+    
+    return postElement;
+}
+        
+        
+        function addCommonEventListeners(postElement) {
+            const likeButton = postElement.querySelector('.like-button');
+            const dislikeButton = postElement.querySelector('.dislike-button');
+            const commentButton = postElement.querySelector('.comment-button');
+            const deleteButton = postElement.querySelector('.delete-button');
+            const likesCount = postElement.querySelector('.likes-count');
+            const dislikesCount = postElement.querySelector('.dislikes-count');
+            const commentsSection = postElement.querySelector('.comments-section');
+            
+            let likes = 0;
+            let dislikes = 0;
+            
+            likeButton.addEventListener('click', function() {
+                likes++;
+                updateLikesDislikes();
+            });
+            
+            dislikeButton.addEventListener('click', function() {
+                dislikes++;
+                updateLikesDislikes();
+            });
+            
+            commentButton.addEventListener('click', function() {
+                const commentInput = document.createElement('input');
+                commentInput.type = 'text';
+                commentInput.placeholder = 'Write a comment...';
+                const commentSubmit = document.createElement('button');
+                commentSubmit.textContent = 'Submit';
+                commentSubmit.addEventListener('click', function() {
+                    if (commentInput.value.trim() !== '') {
+                        const commentElement = document.createElement('p');
+                        commentElement.textContent = commentInput.value;
+                        commentsSection.appendChild(commentElement);
+                        commentInput.value = '';
+                    }
+                });
+                commentsSection.appendChild(commentInput);
+                commentsSection.appendChild(commentSubmit);
+            });
+            
+            deleteButton.addEventListener('click', function() {
+                postElement.parentElement.removeChild(postElement);
+            });
+            
+            function updateLikesDislikes() {
+                likesCount.textContent = `Likes: ${likes}`;
+                dislikesCount.textContent = `Dislikes: ${dislikes}`;
+            }
+        }
+        
+        function clearForm(inputId) {
+            document.getElementById(inputId).value = '';
+        }
+    </script>
+    </body>
+    </html>
+
